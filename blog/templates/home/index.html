@@ -94,7 +94,7 @@
                     <a href="{% url 'entrada_app:entry-detail' entrada.slug %}">
                         <h4>{{entrada.title}}</h4>
                     </a>
-                  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                  <p>{{entrada.resume|truncatechars:70}}</p>
                 </div>
             </div>
         </div>
