@@ -1,0 +1,4 @@
+# git ignore
+blog/secret.json
+blog/applications/*/migrations/*
+!blog/applications/*/migrations/__init__.py

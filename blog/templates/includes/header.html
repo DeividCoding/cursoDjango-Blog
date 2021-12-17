@@ -1,0 +1,36 @@
+<header>
+    <div class="top-bar" id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" style="font-size:20px;">
+            <li>
+              <a style="{% if request.resolver_match.url_name == 'index' %}font-weight:bold; font-size:35px; color:#0FABD5; text-decoration: underline #0FABD5;  {% else %} font-weight:bold; font-size:30px; color:#0FABD5;  {% endif %}" href="{% url 'home_app:index' %}">
+                Home
+            </a>
+            </li>
+      
+            <li>
+              <a style="{% if request.resolver_match.url_name == 'entry-lista' %}font-weight:bold; font-size:35px; color:#0FABD5; text-decoration: underline #0FABD5;  {% else %} font-weight:bold; font-size:30px; color:#0FABD5; {% endif %}" href="{% url 'entrada_app:entry-lista' %}" >
+                Blog
+              </a>  
+            </li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+              <li>
+                <!--¿Es un usuario logeado-->
+                {% if not user.is_anonymous %}
+                <a href="{% url 'favoritos_app:perfil' %}" class="warning button" style="font-size: 30px; color: #0277bd;">Perfil</a>
+                {% else %}
+                <a  href="{% url 'users_app:user-login' %}" class="success button" style="font-size: 30px; color: #0277bd;">Acceder</a>
+                {% endif %}
+              </li>
+
+            </ul>
+
+
+          </div>
+
+    </div>
+</header>
+
